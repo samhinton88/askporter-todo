@@ -46,7 +46,7 @@ const Form = ({ dispatch, onDismiss, preloadedFormData: pd = {} }) => {
     color, dispatch, onDismiss 
   };
   
-  const action = pd 
+  const action = !isEmptyObject(pd) 
     ? data => updateTodo(pd.id, data)
     : data => addTodo(data)
 

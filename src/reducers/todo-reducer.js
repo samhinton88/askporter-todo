@@ -11,7 +11,7 @@ const defaultState = seedTodos;
 
 export default (state=defaultState, action) => {
   switch (action.type) {
-    case TODO_ADD: return [...state, action.payload]
+    case TODO_ADD: return [...state, {...action.payload, id: String(Date.now()) }]
     case TODO_DELETE: return (
       [...state.filter(t => t.id !== action.id)]
     );
